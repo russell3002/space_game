@@ -1,0 +1,458 @@
+body {
+    margin: 0;
+    height: 100%;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+html {
+    background: radial-gradient(ellipse, #1b2735 0%, #090a0f 100%);
+}
+
+#app {
+    min-height: 100%;
+    position: relative;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    
+}
+
+/**#app img {
+    max-width: 150px;
+    display: inline-block;
+    max-height: 150px;
+    margin: 20px;
+}*/
+
+/**==============
+ < Player style >
+ ===============*/
+#player{
+    width: 150px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: 0px;
+    left: calc(50% - 75px);
+    transition: all 0.3s ease-out;
+    z-index: 9999;
+}
+
+#player.skin1{
+    background-image: url(../images/x-wing.png);
+}
+
+#player.skin2{
+    background-image: url(../images/space-ship-1.png);
+}
+
+#player.skin3{
+    background-image: url(../images/space-ship-2.png);
+}
+/**==============
+ < Bullet style >
+ ===============*/
+.bullet{
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background-color: white;
+    border-radius: 6px/10px;
+    box-shadow: 0px 0px 10px,
+                0px 0px 2px inset;
+    
+    transition: all 0.3s ease-out;
+    z-index: 9999;
+}
+
+.bullet.skin1{
+    animation: glow1 1.5s linear infinite;
+}
+.bullet.skin2{
+    animation: glow2 1.5s linear infinite;
+}
+.bullet.skin3{
+    animation: glow3 1.5s linear infinite;
+}
+@keyframes glow1 {
+    from{
+        color: rgb(255, 0, 0);
+        box-shadow: 0 0 9px rgb(255, 0, 0);
+    }
+    50% {
+        color: rgb(255, 0, 0);
+        box-shadow: 0 0 18px rgb(255, 0, 0);
+    }
+    to {
+        color: rgb(255, 0, 0);
+        box-shadow: 0 0 9px rgb(255, 0, 0);
+    }
+
+}
+@keyframes glow2 {
+    from{
+        color: rgb(0, 255, 0);
+        box-shadow: 0 0 9px rgb(0, 255, 0);
+    }
+    50% {
+        color: rgb(0, 255, 0);
+        box-shadow: 0 0 18px rgb(0, 255, 0);
+    }
+    to {
+        color: rgb(0, 255, 0);
+        box-shadow: 0 0 9px rgb(0, 255, 0);
+    }
+
+}
+
+@keyframes glow3 {
+    from{
+        color: rgb(0, 0, 255);
+        box-shadow: 0 0 9px rgb(0, 0, 255);
+    }
+    50% {
+        color: rgb(0, 0, 255);
+        box-shadow: 0 0 18px rgb(0, 0, 255);
+    }
+    to {
+        color: rgb(0, 0, 255);
+        box-shadow: 0 0 9px rgb(0, 0, 255);
+    }
+
+}
+/**=============
+ < Enemy style >
+ ==============*/
+
+ .enemy{
+    width: 150px;
+    height: 150px;
+    background-size: contain;
+    position: absolute;
+    top: -150px;
+    /*left: calc(50% - 75px);*/
+    transition: all 0.3s ease-out;
+    z-index: 9999;
+ }
+
+ .enemy.boom1{
+    background-image: url(../images/boom1.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+ }
+
+ .enemy.boom2{
+    background-image: url(../images/boom2.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+ }
+
+ .enemy.skin1{
+    background-image: url(../images/enemy1.png);
+ }
+
+ .enemy.skin2{
+    background-image: url(../images/enemy2.png);
+ }
+
+/**================
+ < Asteroid style >
+ =================*/
+.asteroid{
+    width: 100px;
+    height: 60px;
+    background-image: url(../images/asteroid1.png);
+    background-size: contain;
+    position: absolute;
+    z-index: 9999;
+}
+
+.asteroid.boom{
+    background-image: url(../images/boom3.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 9999;
+}
+
+/**===================
+ < Start block style >
+ ====================*/
+.start-game{
+    width: 400px;
+    height: 300px;
+    background: rgb(8, 0, 29);
+    border-radius: 10px;
+    border: 1px solid #a200ff;
+    margin: 2% auto;
+    box-shadow:  0 0 100px #3a005c, inset 0 0 15px #6500a0;;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.start-game h2{
+    font-size: 28px;
+    text-align: center;
+    color: #251651;
+    text-transform: uppercase;
+    font-family: italic, cursive;
+
+    color: #fff;
+    text-shadow: 
+        0 0 5px #fff, 
+        0 0 10px #a200ff, 
+        0 0 15px #a200ff, 
+        0 0 20px #a200ff, 
+        0 0 25px #a200ff, 
+        0 0 30px #a200ff, 
+        0 0 35px #a200ff;
+}
+
+#btnStartGame,
+#btnRestartGame{
+    margin: 0 5px;
+    padding: 10px;
+    letter-spacing: 1px;
+    background: none;
+    border: 2px solid #3e234e;
+    height: 2.8em;
+    border-radius: 2.8em;
+    color: #3e234e;
+    font-size: 1.25em;
+    font-weight: bold;
+    font-family: cursive;
+    text-transform: uppercase;
+    transition: .3s;
+    outline: none;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+}
+
+#btnStartGame:hover{
+    color: #a200ff;
+    text-shadow: 0 0 7px #a200ff;
+    border-color: #a200ff;
+    box-shadow: 0 0 15px #a200ff, inset 0 0 15px #a200ff;
+}
+
+.start-game .skins{
+    display: flex;
+}
+
+.start-game .select-skin{
+    width: 30%;
+    height: 120px;
+    margin: 5px;
+    border: 2px solid #3e234e;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.start-game .select-skin.skin-1{
+    background-image: url(../images/x-wing.png);
+}
+
+.start-game .select-skin.skin-2{
+    background-image: url(../images/space-ship-1.png);
+}
+
+.start-game .select-skin.skin-3{
+    background-image: url(../images/space-ship-2.png);
+}
+
+.start-game input{
+    display: none;
+}
+
+.start-game .skins input[type=radio]:checked + label{
+    border: 2px solid #a200ff;
+    box-shadow: 0 0 15px #a200ff, inset 0 0 15px #a200ff;
+}
+
+/**=======
+ < Menu >
+=========*/
+
+.menu .audio .sound svg{
+    width: 50px;
+    height: 50px;
+}
+
+.menu .audio .sound{
+    cursor: pointer;
+}
+
+.menu .audio .music svg{
+    width: 40px;
+    height: 40px;
+    fill: #a200ff;
+}
+
+.menu .audio .music{
+    cursor: pointer;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+    z-index: 99999;
+}
+
+.menu .lifes {
+    display: flex;
+}
+
+.menu .lifes span{
+    background: url(../images/lifes.svg);
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#score{
+    color: #a200ff;
+    font-size: 1.25em;
+    font-weight: bold;
+    font-family: cursive;
+    text-transform: uppercase;
+}
+
+/*==============
+  < Game over >
+===============*/
+
+.end-game{
+    width: 400px;
+    height: 300px;
+    background: rgb(8, 0, 29);
+    border-radius: 10px;
+    border: 1px solid #a200ff;
+    margin: 2% auto;
+    box-shadow:  0 0 100px #3a005c, inset 0 0 15px #6500a0;;
+    padding: 20px;
+}
+
+.end-game h2{
+    font-size: 28px;
+    text-align: center;
+    color: #251651;
+    text-transform: uppercase;
+    font-family: italic, cursive;
+
+    color: #fff;
+    text-shadow: 
+        0 0 5px #fff, 
+        0 0 10px #a200ff, 
+        0 0 15px #a200ff, 
+        0 0 20px #a200ff, 
+        0 0 25px #a200ff, 
+        0 0 30px #a200ff, 
+        0 0 35px #a200ff;
+}
+
+.end-game svg{
+    fill: #a200ff;
+    display: block;
+    margin: 0 auto;
+    width: 145px;
+    height: 145px;
+}
+
+#gameElements{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/**=========
+ < Planets >
+==========*/
+
+.planet{
+    position: absolute;
+    top: -500px;
+    left: 30px;
+    transition: all 0.3s ease-out;
+    z-index: 1;
+    background-size: contain !important;
+    
+}
+
+.planet.skin-1{
+    width: 500px;
+    height: 500px;
+    background: url(../images/planet1.png);
+}
+
+.planet.skin-2{
+    width: 300px;
+    height: 300px;
+    background: url(../images/planet2.png);
+}
+
+.planet.skin-3{
+    width: 450px;
+    height: 450px;
+    background: url(../images/death-star.png);
+}
+
+.planet.skin-4{
+    width: 130px;
+    height: 130px;
+    background: url(../images/planet3.png);
+}
+
+/*=====================
+  < Bonus life style >
+=====================*/
+
+.bonusLife{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    background: url(../images/lifes.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: -100px;
+    transition: all 0.3s ease-out;
+    z-index: 9999;
+}
+
+/*===============
+  < TNT style >
+================*/
+
+.tnt{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    background: url(../images/tnt.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: -100px;
+    transition: all 0.3s ease-out;
+    z-index: 9999;
+}
+
+/**=========
+ < Helpers >
+ ==========*/
+
+ .hidden{
+    display: none;
+ }
