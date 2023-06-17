@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Space</title>
+    <link rel="stylesheet" href="css/stars.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+    <div id="app">
+        <div class="menu">
+            <div class="lifes">
+            </div>
+            <div id="score">
+                Рахунок: <span>0</span>
+            </div>
+            <div class="audio">
+                <div class="sound">
+                    <div class="sound-on">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:#a200ff;}</style></defs><title/><g data-name="Layer 33" id="Layer_33"><path class="cls-1" d="M18,29a1,1,0,0,1-.57-.18l-10-7A1,1,0,0,1,7,21V11a1,1,0,0,1,.43-.82l10-7a1,1,0,0,1,1-.07A1,1,0,0,1,19,4V28a1,1,0,0,1-.54.89A1,1,0,0,1,18,29ZM9,20.48l8,5.6V5.92l-8,5.6Z"/><path class="cls-1" d="M8,22H4a3,3,0,0,1-3-3V13a3,3,0,0,1,3-3H8a1,1,0,0,1,1,1V21A1,1,0,0,1,8,22ZM4,12a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1H7V12Z"/><path class="cls-1" d="M18,21V19a3,3,0,0,0,2.12-5.12l1.42-1.42A5,5,0,0,1,18,21Z"/><path class="cls-1" d="M23.65,22.65a1,1,0,0,1-.7-.29A1,1,0,0,1,23,21a7,7,0,0,0,0-9.9,1,1,0,0,1,1.41-1.41,9,9,0,0,1,0,12.72A1,1,0,0,1,23.65,22.65Z"/></g></svg>
+                    </div>
+                    <div class="sound-off hidden">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:#a200ff}</style></defs><title/><g data-name="Layer 35" id="Layer_35"><path class="cls-1" d="M18,29a1,1,0,0,1-.57-.18l-10-7A1,1,0,0,1,7,21V11a1,1,0,0,1,.43-.82l10-7a1,1,0,0,1,1-.07A1,1,0,0,1,19,4V28a1,1,0,0,1-.54.89A1,1,0,0,1,18,29ZM9,20.48l8,5.6V5.92l-8,5.6Z"/><path class="cls-1" d="M8,22H4a3,3,0,0,1-3-3V13a3,3,0,0,1,3-3H8a1,1,0,0,1,1,1V21A1,1,0,0,1,8,22ZM4,12a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1H7V12Z"/><rect class="cls-1" height="12" transform="translate(-3.77 22.9) rotate(-45)" width="2" x="24.76" y="10"/><rect class="cls-1" height="2" transform="translate(-3.77 22.9) rotate(-45)" width="12" x="19.76" y="15"/></g></svg>
+                    </div>
+                </div>
+                <div class="music">
+                    <div class="music-on">
+                        <svg enable-background="new 0 0 32 32" height="32px" id="svg2" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"><g id="background"><rect fill="none" height="32" width="32"/></g><g id="music"><path d="M8,0v16.35C7.373,16.127,6.702,16,6,16c-3.316,0-6,2.691-6,6c0,3.314,2.684,6,6,6c3.311,0,6-2.686,6-6V6l12,2v12.35   C23.373,20.127,22.703,20,22,20c-3.316,0-6,2.691-6,6c0,3.314,2.684,6,6,6c3.309,0,6-2.686,6-6V4L8,0z"/></g></svg>
+                    </div>
+                    <div class="music-off hidden">
+                        <svg enable-background="new 0 0 32 32" height="32px" id="svg2" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"><g id="background"><rect fill="none" height="32" width="32"/></g><g id="music_x5F_cancel"><path d="M28,15.518V4L8,0v16.35C7.373,16.127,6.702,16,6,16c-3.316,0-6,2.691-6,6c0,3.314,2.684,6,6,6c3.311,0,6-2.686,6-6V6l12,2   v6.059C23.671,14.022,23.338,14,23,14c-4.973,0-9,4.027-9,9c0,4.971,4.027,8.998,9,9c4.971-0.002,8.998-4.029,9-9   C31.999,19.879,30.411,17.132,28,15.518z M23,29.883c-3.801-0.009-6.876-3.084-6.885-6.883c0.009-3.801,3.084-6.876,6.885-6.885   c3.799,0.009,6.874,3.084,6.883,6.885C29.874,26.799,26.799,29.874,23,29.883z"/><polygon points="19,25 21,27 23,25 25,27 27,25 25,23 27,21 25,19 23,21 21,19 19,21 21,23  "/></g></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <audio src="sound/audio.mp3" id="audio" loop></audio>
+        <div class="start-game">
+            <h2>Вибір гравця</h2>
+            <div class="skins">
+                <input type="radio" id="skin-1" name="skin" value="skin1" checked/>
+                <label class="select-skin skin-1" for="skin-1">
+                </label>
+                <input type="radio" id="skin-2" name="skin" value="skin2"/>
+                <label class="select-skin skin-2" for="skin-2">    
+                </label>
+                <input type="radio" id="skin-3" name="skin" value="skin3"/>
+                <label class="select-skin skin-3" for="skin-3"> 
+                </label>
+            </div>
+            <button id="btnStartGame">Початок гри</button>
+        </div>
+
+        <div class="end-game hidden">
+            <svg enable-background="new 0 0 64 64" height="64px" version="1.1" viewBox="0 0 64 64" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M20,31.405V34c0,4.411,3.589,8,8,8h8c4.411,0,8-3.589,8-8v-2.595c3.825-3.419,6-8.251,6-13.405c0-9.925-8.075-18-18-18    S14,8.075,14,18C14,23.154,16.175,27.986,20,31.405z M32,4c7.72,0,14,6.28,14,14c0,4.262-1.914,8.241-5.251,10.92    C40.275,29.299,40,29.873,40,30.479V34c0,2.206-1.794,4-4,4h-8c-2.206,0-4-1.794-4-4v-3.521c0-0.606-0.275-1.181-0.749-1.56    C19.914,26.241,18,22.262,18,18C18,10.28,24.28,4,32,4z"/>
+                <path d="M49.548,55.715c-0.463-1.126-1.242-2.06-2.236-2.715c2.351-1.556,3.351-4.611,2.227-7.307    c-1.271-3.053-4.791-4.504-7.847-3.231L32.001,46.5l-9.691-4.038c-0.737-0.308-1.514-0.464-2.309-0.464    c-2.431,0-4.605,1.45-5.539,3.694c-0.616,1.479-0.62,3.11-0.009,4.593c0.463,1.126,1.242,2.06,2.236,2.715    c-2.351,1.556-3.351,4.611-2.227,7.307c0.935,2.244,3.109,3.694,5.54,3.694c0.792,0,1.567-0.155,2.307-0.463L32,59.5l9.691,4.038    c0.736,0.308,1.512,0.463,2.308,0.463c2.431,0,4.605-1.45,5.54-3.693C50.155,58.828,50.158,57.197,49.548,55.715z M43.229,46.154    c1.018-0.421,2.194,0.059,2.618,1.077c0.424,1.018-0.059,2.19-1.077,2.615L42.4,50.834L37.2,48.667L43.229,46.154z M20.771,59.846    c-1.014,0.42-2.205-0.085-2.617-1.077c-0.424-1.018,0.059-2.19,1.077-2.615l2.369-0.987l5.201,2.167L20.771,59.846z M45.846,58.77    c-0.413,0.991-1.61,1.495-2.616,1.077l-20.863-8.692c-0.005-0.002-0.01-0.005-0.015-0.007l-3.123-1.301    c-0.493-0.206-0.876-0.591-1.08-1.085c-0.203-0.494-0.202-1.037,0.004-1.531c0.312-0.749,1.036-1.232,1.846-1.232    c0.263,0,0.521,0.052,0.769,0.155l24,10c0.493,0.206,0.876,0.591,1.08,1.085C46.053,57.732,46.052,58.275,45.846,58.77z"/>
+                <path d="M34.586,23.414C34.976,23.805,35.488,24,36,24s1.024-0.195,1.414-0.586L38,22.828l0.586,0.586    C38.976,23.805,39.488,24,40,24s1.024-0.195,1.414-0.586c0.781-0.781,0.781-2.047,0-2.828L40.828,20l0.586-0.586    c0.781-0.781,0.781-2.047,0-2.828c-0.78-0.781-2.048-0.781-2.828,0L38,17.172l-0.586-0.586c-0.78-0.781-2.048-0.781-2.828,0    c-0.781,0.781-0.781,2.047,0,2.828L35.172,20l-0.586,0.586C33.805,21.367,33.805,22.633,34.586,23.414z"/>
+                <path d="M22.586,23.414C22.976,23.805,23.488,24,24,24s1.024-0.195,1.414-0.586L26,22.828l0.586,0.586    C26.976,23.805,27.488,24,28,24s1.024-0.195,1.414-0.586c0.781-0.781,0.781-2.047,0-2.828L28.828,20l0.586-0.586    c0.781-0.781,0.781-2.047,0-2.828c-0.78-0.781-2.048-0.781-2.828,0L26,17.172l-0.586-0.586c-0.78-0.781-2.048-0.781-2.828,0    c-0.781,0.781-0.781,2.047,0,2.828L23.172,20l-0.586,0.586C21.805,21.367,21.805,22.633,22.586,23.414z"/>
+                <path d="M28.586,29.414c0.78,0.781,2.048,0.781,2.828,0L32,28.828l0.586,0.586C32.976,29.805,33.488,30,34,30    s1.024-0.195,1.414-0.586c0.781-0.781,0.781-2.047,0-2.828l-2-2c-0.78-0.781-2.048-0.781-2.828,0l-2,2    C27.805,27.367,27.805,28.633,28.586,29.414z"/>
+            </svg>
+            <h2>Кінець гри</h2>
+            <button id="btnRestartGame">Перезапуск гри</button>
+        </div>
+       
+    </div>
+     <div id="gameElements">
+     </div>
+
+    <script src="script.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/start.js"></script>
+    <script src="js/asteroid.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/bonus.js"></script>
+</body>
+</html>
