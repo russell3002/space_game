@@ -50,13 +50,13 @@ document.onkeydown = function(event){
 
 function moveLeft(){
     if(player.offsetLeft > document.querySelector('body').offsetLeft + 25){
-        player.style.left = player.offsetLeft - 40 + "px";
+        player.style.left = player.offsetLeft - 60 + "px";
     }
 }
 
 function moveRight(){
     if(player.offsetLeft + player.offsetWidth < document.querySelector('body').offsetWidth - 50){
-        player.style.left = player.offsetLeft + 40 + "px";
+        player.style.left = player.offsetLeft + 60 + "px";
     }
 }
 
